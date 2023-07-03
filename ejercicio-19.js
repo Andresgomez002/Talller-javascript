@@ -8,9 +8,9 @@ let binariosAEnteros = (lista)=>{
     let entero = 0;
     const longitud = lista.length;
     for (let i = 0; i < longitud; i++){
-    const bit = lista[i];
+    const save = lista[i];
     const potencia = longitud - 1 - i;
-    entero += bit * (2 ** potencia);
+    entero += save * (2 ** potencia);
   }
   return entero;
 }
