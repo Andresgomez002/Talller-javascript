@@ -7,9 +7,11 @@ let dibujo = (letra)=>{
       for(let j = 0; j < 10; j++){
         if( (i + j) % 2 == 0 ){
           fila += letra;    
+        }else{
+          fila += ' '
         }
       }
       console.log(fila);
   }
 }
-console.log(dibujo('o'));
+dibujo('o');
