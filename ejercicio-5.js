@@ -7,18 +7,20 @@
 // Nota: lista1 y lista2 pueden clasificarse en diferentes órdenes. También lista1 y lista2 pueden tener los mismos números enteros. Eliminar duplicado en el resultado devuelto.
 
 let unirMatriz = (l1,l2)=>{
-    let listaResultante = [];
-    let lista1 = [];
-    let lista2 = [];
-   for(let i = 0; i < l1.length; i++){
-    lista1.push(l1[i]);
-      for(let j = 0; j < l2.length; j++){
-        lista2.push(l2[j]);
-      }
-    
-  }
-   return listaResultante.push(lista1) ;
+  const listaCombinada = [...l1, ...l2]; 
+  for(let i = 0; i < listaCombinada.length; i++){
+    for(let j = 0; j < listaCombinada.length ; j++){
+        if(listaCombinada[j] > listaCombinada[j + 1]){
+            const temp = listaCombinada[j];
+            listaCombinada[j] = listaCombinada[j + 1];
+            listaCombinada[j + 1] = temp;
+        }
+    }
+}
+return listaCombinada;
 
 }
 
-console.log(unirMatriz([1,2,3,4],[5,6,7,8]));
+console.log(unirMatriz([1, 3, 5, 7, 9],[10, 8, 6, 4, 2]));
+console.log(unirMatriz([1, 2, 3, 4, 5],[6, 7, 8, 9, 10] ));
+console.log(unirMatriz([1, 3, 5, 7, 9, 11, 12],[2, 4, 8, 10, 20] ));
